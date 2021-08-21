@@ -8,8 +8,8 @@ runs:
         echo $PWD
         ls -l
     - name: Test action path
-      working-directory: $GITHUB_ACTION_PATH
+      working-directory: ${{ env.GITHUB_ACTION_PATH }}
       shell: bash
       run: |
-        echo $PWD
+        echo $GITHUB_ACTION_PATH
         ls -l
