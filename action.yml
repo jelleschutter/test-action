@@ -1,0 +1,17 @@
+name: Test Action
+runs:
+  using: composite
+  steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Test normal path
+      shell: bash
+      run: |
+        echo $PWD
+        ls -l
+    - name: Test action path
+      working-directory: $GITHUB_ACTION_PATH
+      shell: bash
+      run: |
+        echo $PWD
+        ls -l
